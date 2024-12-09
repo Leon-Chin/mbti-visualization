@@ -215,6 +215,7 @@ const WorldMap = ({ data }) => {
                 }} />}
             </div>
             {isOn && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                <div style={{ marginBottom: 18, userSelect: 'none', display: 'flex', width: "100%", marginTop: 10, marginLeft: 10, fontSize: 20 }}>Selected Country: {selectedCountry}</div>
                 {selectedPersonality && <a className="personality-description" href={`https://www.16personalities.com/${selectedPersonality.toLowerCase()}-personality`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
                     <PersonalityImage width={160} height={160} type={selectedPersonality} />
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 10, paddingRight: 10 }}>
@@ -226,7 +227,7 @@ const WorldMap = ({ data }) => {
                     </div>
                 </a>}
                 {data.length == 0 ? <></> : <RadarChart data={data} country={selectedCountry} />}
-                <Button type="text" size='large' onClick={() => setOn(!isOn)}>{isOn ? "Hide Radar Chart" : "Show Radar Chart"}</Button>
+                <Button type="text" size='large' onClick={() => setOn(!isOn)}>{isOn ? "Hide" : "Show"}</Button>
             </div>}
         </div>
     </div >
