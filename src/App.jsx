@@ -3,6 +3,7 @@ import WorldMap from "./components/wordMap";
 import { preprocessData } from "./utils/preprocessData";
 import WordCloudChart from "./components/wordCloud";
 import RadarChart from "./components/radarChart";
+import StackedBarChart from "./components/stackedBarChart";
 
 
 
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
       {data && <WorldMap data={data} />}
+      {(data && data.length !== 0) && <StackedBarChart data={data} />}
       <WordCloudChart />
     </>
   )

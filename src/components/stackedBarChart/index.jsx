@@ -1,9 +1,12 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
+import { personalityColors } from "../../utils/personalityColors";
 
 const StackedBarChart = ({ data }) => {
+    console.log("StackedBarChart", data);
     // 提取分类和国家信息
     const categories = Object.keys(data[0].value)
+    console.log("categories", categories);
     const countries = data.map((item) => item.country);
 
     // 数据转换为 ECharts 格式
@@ -14,19 +17,13 @@ const StackedBarChart = ({ data }) => {
         emphasis: {
             focus: "series",
         },
-        data: data.map((item) => item[category]),
+        data: data.map((item) => item.value[category]),
+        itemStyle: {
+            color: personalityColors[category]
+        }
     }));
 
     const option = {
-        title: {
-            text: "Country Distributions",
-            left: "center",
-            textStyle: {
-                fontSize: 24,
-                fontWeight: "bold",
-                color: "#444",
-            },
-        },
         tooltip: {
             trigger: "axis",
             axisPointer: {
@@ -34,7 +31,7 @@ const StackedBarChart = ({ data }) => {
             },
         },
         legend: {
-            bottom: 0,
+            top: 0,
             textStyle: {
                 fontSize: 12,
             },
@@ -50,7 +47,7 @@ const StackedBarChart = ({ data }) => {
             data: countries,
             axisLabel: {
                 interval: 0, // 显示所有国家
-                rotate: 45, // 倾斜标签避免重叠
+                rotate: 90, // 倾斜标签避免重叠
                 textStyle: {
                     fontSize: 10,
                 },
@@ -64,9 +61,13 @@ const StackedBarChart = ({ data }) => {
             },
         },
         series: seriesData,
+        barCategoryGap: "0%", // 类别间柱子无间隙
+        barGap: "0%",
     };
 
-    return <ReactECharts option={option} style={{ height: 600, width: "100%" }} />;
+    return <div style={{ marginBottom: 20, marginTop: 20, display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+        <ReactECharts option={option} style={{ height: 800, width: 1200 }} />;
+    </div>
 };
 
 export default StackedBarChart;
