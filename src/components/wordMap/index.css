@@ -1,0 +1,13 @@
+.personality-description {
+    border-radius: 20px;
+    padding: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personality-description:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    /* 悬停时上移10px */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 阴影更深 */
+}

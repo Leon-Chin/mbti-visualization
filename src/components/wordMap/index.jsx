@@ -5,9 +5,10 @@ import world from '../../world.json'
 import RadarChart from "../radarChart";
 import { Button, Select } from "antd";
 import PersonalityImage from "../PersonalitySVG";
+import './index.css'
 
 const personalityColors = {
-    ENFJ: "#c607443",  // 温暖的橙粉色，展现热情与关怀
+    ENFJ: "#607443",  // 温暖的橙粉色，展现热情与关怀
     ENFP: "#47765f",  // 柔和的阳光黄色，充满活力与创造力
     ENTJ: "#6d4f5e",  // 鲜明的玫瑰红，代表果断与领导力
     ENTP: "#4e3141",  // 清新的薄荷绿，充满机智与探索精神
@@ -24,6 +25,74 @@ const personalityColors = {
     ISTJ: "#8f8f8f",  // 柔和的浅灰色，稳重与传统
     ISTP: "#9b7d2e",  // 淡青色，独立与实用
 };
+
+const personalityRole_description = {
+    ENFJ: {
+        role: 'Protagonist',
+        description: 'Charismatic and inspiring leaders, able to mesmerize their listeners.',
+    },
+    ENFP: {
+        role: 'Campaigner',
+        description: 'Enthusiastic, creative, and sociable free spirits, who can always find a reason to smile.',
+    },
+    ENTJ: {
+        role: 'Commander',
+        description: 'Bold, imaginative, and strong-willed leaders, always finding a way – or making one.',
+    },
+    ENTP: {
+        role: 'Debater',
+        description: 'Smart and curious thinkers who cannot resist an intellectual challenge.',
+    },
+    ESFJ: {
+        role: 'Consul',
+        description: 'Extraordinarily caring, social, and popular people, always eager to help.',
+    },
+    ESFP: {
+        role: 'Entertainer',
+        description: 'Spontaneous, energetic, and enthusiastic people – life is never boring around them.',
+    },
+    ESTJ: {
+        role: 'Executive',
+        description: 'Excellent administrators, unsurpassed at managing things – or people.',
+    },
+    ESTP: {
+        role: 'Entrepreneur',
+        description: 'Smart, energetic, and very perceptive people, who truly enjoy living on the edge.',
+    },
+    INFJ: {
+        role: 'Advocate',
+        description: 'Quiet and mystical, yet very inspiring and tireless idealists.',
+    },
+    INFP: {
+        role: 'Mediator',
+        description: 'Poetic, kind, and altruistic people, always eager to help a good cause.',
+    },
+    INTJ: {
+        role: 'Architect',
+        description: 'Imaginative and strategic thinkers, with a plan for everything.',
+    },
+    INTP: {
+        role: 'Logician',
+        description: 'Innovative inventors with an unquenchable thirst for knowledge.',
+    },
+    ISFJ: {
+        role: 'Defender',
+        description: 'Very dedicated and warm protectors, always ready to defend their loved ones.',
+    },
+    ISFP: {
+        role: 'Adventurer',
+        description: 'Flexible and charming artists, always ready to explore and experience something new.',
+    },
+    ISTJ: {
+        role: 'Logistician',
+        description: 'Practical and fact-minded individuals, whose reliability cannot be doubted.',
+    },
+    ISTP: {
+        role: 'Virtuoso',
+        description: 'Bold and practical experimenters, masters of all kinds of tools.',
+    },
+};
+
 
 const regionCenters = {
     Asia: [100, 20],
@@ -146,36 +215,21 @@ const WorldMap = ({ data }) => {
                 }} />}
             </div>
             {isOn && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-                {selectedPersonality && <a href={`https://www.16personalities.com/${selectedPersonality.toLowerCase()}-personality`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-                    <PersonalityImage width={200} height={160} type={selectedPersonality} />
-                    <div style={{ color: personalityColors[selectedPersonality.toUpperCase()], fontSize: 36, fontWeight: 600, }}>{selectedPersonality}</div>
+                {selectedPersonality && <a className="personality-description" href={`https://www.16personalities.com/${selectedPersonality.toLowerCase()}-personality`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                    <PersonalityImage width={160} height={160} type={selectedPersonality} />
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 10, paddingRight: 10 }}>
+                        <div style={{ color: personalityColors[selectedPersonality.toUpperCase()], fontSize: 38, fontWeight: 600, }}>{personalityRole_description[selectedPersonality.toUpperCase()].role}</div>
+                        <div style={{ color: "#363c4a", fontSize: 26, fontWeight: 400, }}>
+                            {selectedPersonality}
+                        </div>
+                        <div style={{ color: '#797f8c', width: 170, textAlign: 'center' }}>{personalityRole_description[selectedPersonality.toUpperCase()].description}</div>
+                    </div>
                 </a>}
                 {data.length == 0 ? <></> : <RadarChart data={data} country={selectedCountry} />}
                 <Button type="text" size='large' onClick={() => setOn(!isOn)}>{isOn ? "Hide Radar Chart" : "Show Radar Chart"}</Button>
             </div>}
         </div>
     </div >
-};
-// :
-// <div className="chart-container" style={{
-//     display: 'flex',
-//     justifyContent: 'space-evenly',
-//     alignItems: 'center',
-//     backgroundColor: 'rgb(249, 249, 249)',
-//     borderRadius: 20,
-//     gap: 100,
-//     boxShadow: '0 4px 8px rgba(0,0,0,0.6)',
-//     height: MapHeight,
-//     width: MapWidth
-// }}>
-//     {data.length == 0 ? <></> : <ReactEcharts option={options} style={{ height: MapHeight, width: MapWidth }} onEvents={{
-//         click: (params) => {
-//             console.log("Clicked country:", params);
-//             setOn(true)
-//             setSelectedCountry(params.name);
-//             // alert(`Clicked country: ${params.name}`);
-//         },
-//     }} />}
-// </div>}
+}
 
 export default WorldMap
