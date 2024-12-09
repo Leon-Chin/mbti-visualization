@@ -13,7 +13,7 @@ const RadarChart = ({ data, country }) => {
         name: key,
         max: maxValue, // 假设最大值为 1
     }));
-    const radarValues = Object.values(countryRecord.value)
+    const radarValues = Object.values(countryRecord.value).map(value => value.toFixed(3))
 
     const option = {
         // title: {
@@ -76,7 +76,7 @@ const RadarChart = ({ data, country }) => {
                         label: {
                             show: true,
                             formatter: function (params) {
-                                return params.value.toFixed(2);
+                                return params.value;
                             }
                         }
                     },

@@ -17,7 +17,7 @@ const StackedBarChart = ({ data }) => {
         emphasis: {
             focus: "series",
         },
-        data: data.map((item) => item.value[category]),
+        data: data.map((item) => item.value[category].toFixed(4)),
         itemStyle: {
             color: personalityColors[category]
         }
@@ -66,7 +66,7 @@ const StackedBarChart = ({ data }) => {
     };
 
     return <div style={{ marginBottom: 20, marginTop: 20, display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-        <ReactECharts option={option} style={{ height: 800, width: 1200 }} />;
+        <ReactECharts option={option} style={{ height: 800, width: 1200 }} />
     </div>
 };
 
