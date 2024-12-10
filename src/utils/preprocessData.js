@@ -79,8 +79,6 @@ export const preprocessData = (text) => {
             Feeling: ['ENFJ', 'ENFP', 'ESFJ', 'ESFP', 'INFJ', 'INFP', 'ISFJ', 'ISFP'],
             Judging: ['ENFJ', 'ENTJ', 'ESFJ', 'ESTJ', 'INFJ', 'INTJ', 'ISFJ', 'ISTJ'],
             Prospecting: ['ENFP', 'ENTP', 'ESFP', 'ESTP', 'INFP', 'INTP', 'ISFP', 'ISTP'],
-            // Assertive: ['ESTJ-A', 'ENFJ-A', 'ESFJ-A', 'ENTJ-A', 'ENFP-A', 'INFJ-A', 'INTP-A', 'ISFJ-A'],
-            // Turbulent: ['ESTJ-T', 'ENFJ-T', 'ESFJ-T', 'ENTJ-T', 'ENFP-T', 'INFJ-T', 'INTP-T', 'ISFJ-T'],
         };
 
         return data.map((item) => {
