@@ -27,7 +27,6 @@ data.forEach((item) => {
             borderWidth: 0,
         },
         lineStyle: {
-            color: personalityColors[Personality],
             width: 2,
         }
 
@@ -46,7 +45,6 @@ data.forEach((item) => {
             borderWidth: 0,
         },
         lineStyle: {
-            color: zodiacColors[Zodiac],
             width: 2,
         }
     });
@@ -57,7 +55,6 @@ data.forEach((item) => {
 for (const [zodiac, personalities] of Object.entries(zodiacGroups)) {
     result_z_p.children.push({
         name: zodiac, children: personalities, symbolSize: 6, lineStyle: {
-            color: zodiacColors[zodiac],
             width: 4,
         }
     });
@@ -68,7 +65,6 @@ for (const [zodiac, personalities] of Object.entries(zodiacGroups)) {
 for (const [personality, zodiacs] of Object.entries(personalityGroups)) {
     result_p_z.children.push({
         name: personality, children: zodiacs, symbolSize: 6, lineStyle: {
-            color: personalityColors[personality],
             width: 4,
         },
     });

@@ -27,7 +27,6 @@ export default function PersonalityPieChart({ data, country }) {
         series: [
             {
                 type: 'pie',
-                radius: [50, 250],
                 label: {
                     position: 'inner',
                     fontSize: 14
