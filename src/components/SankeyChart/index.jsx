@@ -3,7 +3,6 @@ import ReactECharts from "echarts-for-react";
 import { personalityColors } from '../../utils/personalityColors';
 
 export default function SankeyChart({ data }) {
-    console.log("SankeyChart", data);
     const Countries = ["United States", "China", "France", "Russia", "United Kingdom"]
     const Personalities = Object.keys(personalityColors).map(item => ({
         name: item, itemStyle: {
@@ -15,17 +14,12 @@ export default function SankeyChart({ data }) {
     const LinksData = []
     data.forEach(item => {
         Object.keys(item.value).forEach(personality => {
-            console.log(item.country, "Countries.includes(item.country)", Countries.includes(item.country));
-
             if (Countries.includes(item.country)) {
                 const itemD = { source: personality, target: item.country, value: parseFloat((item.value[personality] * 100).toFixed(1)) }
-                console.log("itemD", itemD);
                 LinksData.push(itemD)
             }
         })
     })
-    console.log(LinksData.length);
-    console.log(LinksData);
     const option = useMemo(() => ({
         tooltip: {
             trigger: 'item',
@@ -62,7 +56,6 @@ export default function SankeyChart({ data }) {
         }
     }), [data]);
 
-    console.log("option", option);
     return (
         <ReactECharts option={option} style={{ height: 730, width: 300 }} />
     )

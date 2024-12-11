@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import WorldMap from "./components/wordMap";
 import { preprocessData } from "./utils/preprocessData";
 import WordCloudChart from "./components/wordCloud";
-import RadarChart from "./components/radarChart";
 import StackedBarChart from "./components/stackedBarChart";
 import SankeyChart from "./components/SankeyChart";
+import ZodiacChart from "./components/ZodiacChart";
 
 
 
@@ -36,6 +36,7 @@ function App() {
         {(data && data.length !== 0) && <StackedBarChart data={data} />}
       </div>
       <WordCloudChart />
+      <ZodiacChart />
     </>
   )
 }

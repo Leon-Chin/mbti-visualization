@@ -1,0 +1,552 @@
+[
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Cancer",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Capricorn",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Gemini",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Leo",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Libra",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Scorpio",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFJ",
+        "Zodiac": "Virgo",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Aquarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Aries",
+        "Count": 2
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Capricorn",
+        "Count": 2
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Leo",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Libra",
+        "Count": 1
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Pisces",
+        "Count": 4
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Sagittarius",
+        "Count": 4
+    },
+    {
+        "Personality": "ENFP",
+        "Zodiac": "Scorpio",
+        "Count": 3
+    },
+    {
+        "Personality": "ENTJ",
+        "Zodiac": "Aries",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTJ",
+        "Zodiac": "Gemini",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTJ",
+        "Zodiac": "Leo",
+        "Count": 2
+    },
+    {
+        "Personality": "ENTJ",
+        "Zodiac": "Sagittarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Aquarius",
+        "Count": 2
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Cancer",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Capricorn",
+        "Count": 6
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Gemini",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Leo",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Libra",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Pisces",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Sagittarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Scorpio",
+        "Count": 2
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Taurus",
+        "Count": 2
+    },
+    {
+        "Personality": "ENTP",
+        "Zodiac": "Virgo",
+        "Count": 2
+    },
+    {
+        "Personality": "ESFJ",
+        "Zodiac": "Aquarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ESFJ",
+        "Zodiac": "Sagittarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ESFP",
+        "Zodiac": "Aquarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ESFP",
+        "Zodiac": "Aries",
+        "Count": 1
+    },
+    {
+        "Personality": "ESFP",
+        "Zodiac": "Capricorn",
+        "Count": 1
+    },
+    {
+        "Personality": "ESTJ",
+        "Zodiac": "Leo",
+        "Count": 1
+    },
+    {
+        "Personality": "ESTJ",
+        "Zodiac": "Virgo",
+        "Count": 1
+    },
+    {
+        "Personality": "ESTP",
+        "Zodiac": "Aries",
+        "Count": 1
+    },
+    {
+        "Personality": "ESTP",
+        "Zodiac": "Sagittarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ESTP",
+        "Zodiac": "Taurus",
+        "Count": 1
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Aquarius",
+        "Count": 1
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Aries",
+        "Count": 2
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Cancer",
+        "Count": 5
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Capricorn",
+        "Count": 4
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Gemini",
+        "Count": 3
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Leo",
+        "Count": 3
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Pisces",
+        "Count": 1
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Sagittarius",
+        "Count": 4
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Taurus",
+        "Count": 4
+    },
+    {
+        "Personality": "INFJ",
+        "Zodiac": "Virgo",
+        "Count": 4
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Aquarius",
+        "Count": 6
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Aries",
+        "Count": 6
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Cancer",
+        "Count": 8
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Capricorn",
+        "Count": 7
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Gemini",
+        "Count": 4
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Leo",
+        "Count": 1
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Libra",
+        "Count": 5
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Pisces",
+        "Count": 7
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Sagittarius",
+        "Count": 4
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Scorpio",
+        "Count": 6
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Taurus",
+        "Count": 10
+    },
+    {
+        "Personality": "INFP",
+        "Zodiac": "Virgo",
+        "Count": 8
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Aquarius",
+        "Count": 7
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Aries",
+        "Count": 5
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Cancer",
+        "Count": 8
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Capricorn",
+        "Count": 5
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Gemini",
+        "Count": 4
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Leo",
+        "Count": 2
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Libra",
+        "Count": 3
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Pisces",
+        "Count": 7
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Sagittarius",
+        "Count": 4
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Scorpio",
+        "Count": 3
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Taurus",
+        "Count": 8
+    },
+    {
+        "Personality": "INTJ",
+        "Zodiac": "Virgo",
+        "Count": 3
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Aquarius",
+        "Count": 4
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Aries",
+        "Count": 3
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Cancer",
+        "Count": 7
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Capricorn",
+        "Count": 2
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Gemini",
+        "Count": 4
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Leo",
+        "Count": 7
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Libra",
+        "Count": 5
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Pisces",
+        "Count": 4
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Sagittarius",
+        "Count": 5
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Scorpio",
+        "Count": 1
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Taurus",
+        "Count": 2
+    },
+    {
+        "Personality": "INTP",
+        "Zodiac": "Virgo",
+        "Count": 5
+    },
+    {
+        "Personality": "ISFJ",
+        "Zodiac": "Cancer",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFJ",
+        "Zodiac": "Leo",
+        "Count": 2
+    },
+    {
+        "Personality": "ISFJ",
+        "Zodiac": "Libra",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFJ",
+        "Zodiac": "Sagittarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFJ",
+        "Zodiac": "Scorpio",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFJ",
+        "Zodiac": "Virgo",
+        "Count": 2
+    },
+    {
+        "Personality": "ISFP",
+        "Zodiac": "Aquarius",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFP",
+        "Zodiac": "Aries",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFP",
+        "Zodiac": "Leo",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFP",
+        "Zodiac": "Libra",
+        "Count": 1
+    },
+    {
+        "Personality": "ISFP",
+        "Zodiac": "Pisces",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Aquarius",
+        "Count": 2
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Aries",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Leo",
+        "Count": 2
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Libra",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Pisces",
+        "Count": 3
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Scorpio",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Taurus",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTJ",
+        "Zodiac": "Virgo",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTP",
+        "Zodiac": "Aries",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTP",
+        "Zodiac": "Gemini",
+        "Count": 1
+    },
+    {
+        "Personality": "ISTP",
+        "Zodiac": "Leo",
+        "Count": 2
+    },
+    {
+        "Personality": "ISTP",
+        "Zodiac": "Scorpio",
+        "Count": 2
+    },
+    {
+        "Personality": "ISTP",
+        "Zodiac": "Taurus",
+        "Count": 4
+    }
+]

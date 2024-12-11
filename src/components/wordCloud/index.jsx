@@ -25,7 +25,6 @@ const WordCloud = ({ words, personality }) => {
             .padding(2)
             .rotate(() => 0)
             .fontSize((d) => d.size / maxFrequencyNumber * 40) // 动态字体大小
-            // .fontSize((d) => Math.sqrt(d.value) / 10) // 动态字体大小
             .on('end', draw);
 
         layout.start();
