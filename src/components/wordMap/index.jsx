@@ -3,12 +3,14 @@ import ReactEcharts from "echarts-for-react";
 import * as echarts from 'echarts';
 import world from '../../world.json'
 import RadarChart from "../radarChart";
-import { Button, Select } from "antd";
+import { Button, Segmented, Select } from "antd";
 import PersonalityImage from "../PersonalitySVG";
 import './index.css'
 import { personalityColors } from "../../utils/personalityColors";
 import { personalityRole_description } from "../../utils/personalityDescription";
 import { regionCenters } from "../../utils/regionCenters";
+import PersonalityPieChart from "../PieChart";
+import { PieChartFilled, RadarChartOutlined } from "@ant-design/icons";
 
 const MapWidth = 950
 const MapHeight = 600
@@ -19,6 +21,11 @@ const MODEs = {
     Observant_Intuition: "Observant vs. Intuition",
     Thinking_Feeling: "Thinking vs. Feeling",
     Judging_Prospecting: "Judging vs. Prospecting"
+}
+
+const SUBVIEW = {
+    pie: "Nightingale View",
+    radar: "Radar View"
 }
 
 const WorldMap = ({ data }) => {
@@ -34,6 +41,8 @@ const WorldMap = ({ data }) => {
     const [selectedPersonality, setSelectedPersonality] = useState('');
 
     const [mode, setMode] = useState(MODEs.mainPersonality);
+
+    const [subView, setSubView] = useState(SUBVIEW.radar);
 
     // 准备 series 数据
     const mainPersonality_SeriesData = data.map((item) => ({
@@ -243,8 +252,20 @@ const WorldMap = ({ data }) => {
                         <div style={{ color: '#797f8c', width: 170, textAlign: 'center' }}>{personalityRole_description[selectedPersonality.toUpperCase()].description}</div>
                     </div>
                 </a>}
-                {data.length == 0 ? <></> : <RadarChart data={data} country={selectedCountry} />}
-                <Button type="text" size='large' onClick={() => setOn(!isOn)}>{isOn ? "Hide" : "Show"}</Button>
+                {data.length !== 0 && <>
+                    {subView === SUBVIEW.radar ? <RadarChart data={data} country={selectedCountry} /> :
+                        <PersonalityPieChart data={data} country={selectedCountry} />}
+                </>}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+                    {data.filter((item) => item.country === selectedCountry)[0] && <Segmented
+                        options={[
+                            { label: SUBVIEW.radar, value: SUBVIEW.radar, icon: <RadarChartOutlined /> },
+                            { label: SUBVIEW.pie, value: SUBVIEW.pie, icon: <PieChartFilled /> },
+                        ]}
+                        value={subView} onChange={setSubView}
+                    />}
+                    <Button type="text" size='large' onClick={() => setOn(!isOn)}>{isOn ? "Hide" : "Show"}</Button>
+                </div>
             </div>}
         </div>
     </div >
