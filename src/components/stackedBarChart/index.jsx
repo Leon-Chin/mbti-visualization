@@ -49,7 +49,7 @@ const StackedBarChart = ({ data }) => {
                 interval: 0, // 显示所有国家
                 rotate: 90, // 倾斜标签避免重叠
                 textStyle: {
-                    fontSize: 10,
+                    fontSize: 8,
                 },
             },
         },
@@ -66,7 +66,7 @@ const StackedBarChart = ({ data }) => {
     };
 
     return <div style={{ marginBottom: 20, marginTop: 20, display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-        <ReactECharts option={option} style={{ height: 800, width: 1200 }} />
+        <ReactECharts option={option} style={{ height: 800, width: 1000 }} />
     </div>
 };
 

@@ -4,6 +4,7 @@ import { preprocessData } from "./utils/preprocessData";
 import WordCloudChart from "./components/wordCloud";
 import RadarChart from "./components/radarChart";
 import StackedBarChart from "./components/stackedBarChart";
+import SankeyChart from "./components/SankeyChart";
 
 
 
@@ -30,7 +31,10 @@ function App() {
   return (
     <>
       {data && <WorldMap data={data} />}
-      {(data && data.length !== 0) && <StackedBarChart data={data} />}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'start' }}>
+        {(data && data.length !== 0) && <SankeyChart data={data} />}
+        {(data && data.length !== 0) && <StackedBarChart data={data} />}
+      </div>
       <WordCloudChart />
     </>
   )

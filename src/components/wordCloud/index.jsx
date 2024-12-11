@@ -80,7 +80,7 @@ const WordCloudChart = () => {
             }}
         >
             {Object.keys(personalityData).map((type, i) => (
-                <a key={type + i} className="personality-description" href={`https://www.16personalities.com/${type.toLowerCase()}-personality`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                <a key={type + i} className="personality-description" href={`https://www.16personalities.com/${type.toLowerCase()}-personality`} style={{ display: 'flex', padding: 6, alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
                     <div
                         key={type}
                         style={{
