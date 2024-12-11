@@ -79,26 +79,28 @@ const WordCloudChart = () => {
                 alignItems: 'center', // 垂直居中对齐
             }}
         >
-            {Object.keys(personalityData).map((type) => (
-                <div
-                    key={type}
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row', // 垂直布局，角色和词云堆叠
-                        alignItems: 'center', // 垂直居中对齐
-                        justifyContent: 'center',
-                    }}
-                >
-                    {/* 左侧显示角色或图标 */}
-                    <div style={{ width: 60, fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', }}>
-                        <PersonalityImage width={60} height={60} type={type} />
-                        <div style={{ color: '#797f8c' }}>
-                            {type}
+            {Object.keys(personalityData).map((type, i) => (
+                <a key={type + i} className="personality-description" href={`https://www.16personalities.com/${type.toLowerCase()}-personality`} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                    <div
+                        key={type}
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row', // 垂直布局，角色和词云堆叠
+                            alignItems: 'center', // 垂直居中对齐
+                            justifyContent: 'center',
+                        }}
+                    >
+                        {/* 左侧显示角色或图标 */}
+                        <div style={{ width: 60, fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', }}>
+                            <PersonalityImage width={60} height={60} type={type} />
+                            <div style={{ color: '#797f8c' }}>
+                                {type}
+                            </div>
                         </div>
+                        {/* 右侧显示词云 */}
+                        < WordCloud key={type} personality={type} words={personalityData[type]} />
                     </div>
-                    {/* 右侧显示词云 */}
-                    < WordCloud key={type} personality={type} words={personalityData[type]} />
-                </div>
+                </a>
             ))}
         </div>
     </div >
