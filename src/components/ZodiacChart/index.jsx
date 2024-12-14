@@ -119,18 +119,21 @@ export default function ZodiacChart() {
     };
 
     return (
-        <div style={{ display: "flex", alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ display: 'flex', flex: 1, alignItems: 'flex-start', justifyContent: 'flex-end', height: 900 }}>
-                <ReactECharts
-                    option={option_p_z}
-                    style={{ height: 600, width: 600 }}
-                />
-            </div>
-            <div style={{ display: 'flex', flex: 1, alignItems: 'flex-end', justifyContent: 'flex-start', height: 900 }}>
-                <ReactECharts
-                    option={option_z_p}
-                    style={{ height: 600, width: 600 }}
-                />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', }}>
+            <div style={{ marginTop: 40, textAlign: 'center', fontSize: 36, fontWeight: 600 }}>Zodiac and MBTI Correlations</div>
+            <div style={{ display: "flex", alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', flex: 1, alignItems: 'flex-start', justifyContent: 'flex-end', height: 700, paddingTop: 20 }}>
+                    <ReactECharts
+                        option={option_p_z}
+                        style={{ height: 500, width: 500 }}
+                    />
+                </div>
+                <div style={{ display: 'flex', flex: 1, alignItems: 'flex-end', justifyContent: 'flex-start', height: 700 }}>
+                    <ReactECharts
+                        option={option_z_p}
+                        style={{ height: 560, width: 560 }}
+                    />
+                </div>
             </div>
         </div>
     )

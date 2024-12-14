@@ -56,24 +56,26 @@ const WordCloud = ({ words, personality }) => {
 
 
 const WordCloudChart = () => {
-    return <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', marginBottom: 20 }}>
+    return <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', paddingTop: 40, marginBottom: 20 }}>
         <div
             style={{
                 width: 1200,
-                marginBottom: 20,
+                marginBottom: 30,
                 display: 'flex',
+                justifyContent: 'center',
+                fontSize: 36,
                 gap: 4
             }}
         >
-            <span style={{ fontFamily: " Arial, sans-serif", fontSize: 20, color: "#444", fontWeight: 600 }}>十六型人格词云分析</span>
-            <span style={{ fontFamily: " Arial, sans-serif", fontSize: 20, color: "#444", fontWeight: 100 }}>Wordclouds Imagination</span>
+            <span style={{ color: "#444", fontWeight: 600 }}>16 Personalities Wordclouds Analysis</span>
+            <span style={{ color: "#444", fontWeight: 100 }}>Wordclouds Imagination</span>
         </div>
         <div
             style={{
                 width: 1200,
                 display: 'grid',
                 gridTemplateColumns: 'repeat(4, 1fr)', // 设置为 4 列布局
-                gap: '20px', // 每个单元之间的间距
+                gap: '20px', // 每个单元之间的间距w
                 justifyItems: 'center', // 水平居中对齐
                 alignItems: 'center', // 垂直居中对齐
             }}
