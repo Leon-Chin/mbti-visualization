@@ -64,7 +64,11 @@ for (const [zodiac, personalities] of Object.entries(zodiacGroups)) {
 // 生成嵌套结构
 for (const [personality, zodiacs] of Object.entries(personalityGroups)) {
     result_p_z.children.push({
-        name: personality, children: zodiacs, symbolSize: 6, lineStyle: {
+        name: personality,
+        children: zodiacs,
+        symbolSize: 6,
+        expandAndCollapse: false,
+        lineStyle: {
             width: 4,
         },
     });
@@ -83,7 +87,7 @@ export default function ZodiacChart() {
                 symbolSize: 10,
                 edgeShape: "curve",
                 initialTreeDepth: 3,
-                expandAndCollapse: true,
+                expandAndCollapse: false,
                 roam: false,
                 data: [result_p_z],
                 lineStyle: {
@@ -104,7 +108,7 @@ export default function ZodiacChart() {
                 symbolSize: 10,
                 edgeShape: "curve",
                 initialTreeDepth: 3,
-                expandAndCollapse: true,
+                expandAndCollapse: false,
                 roam: false,
                 data: [result_z_p],
                 lineStyle: {
@@ -116,14 +120,18 @@ export default function ZodiacChart() {
 
     return (
         <div style={{ display: "flex", alignItems: 'center', justifyContent: 'center' }}>
-            <ReactECharts
-                option={option_p_z}
-                style={{ height: 700, width: 700 }}
-            />
-            <ReactECharts
-                option={option_z_p}
-                style={{ height: 700, width: 700 }}
-            />
+            <div style={{ display: 'flex', flex: 1, alignItems: 'flex-start', justifyContent: 'flex-end', height: 900 }}>
+                <ReactECharts
+                    option={option_p_z}
+                    style={{ height: 600, width: 600 }}
+                />
+            </div>
+            <div style={{ display: 'flex', flex: 1, alignItems: 'flex-end', justifyContent: 'flex-start', height: 900 }}>
+                <ReactECharts
+                    option={option_z_p}
+                    style={{ height: 600, width: 600 }}
+                />
+            </div>
         </div>
     )
 }

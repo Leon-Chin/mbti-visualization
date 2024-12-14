@@ -11,6 +11,7 @@ import { personalityRole_description } from "../../utils/personalityDescription"
 import { regionCenters } from "../../utils/regionCenters";
 import PersonalityPieChart from "../PieChart";
 import { PieChartFilled, RadarChartOutlined } from "@ant-design/icons";
+import Loader from "../Loader";
 
 const MapWidth = 950
 const MapHeight = 600
@@ -29,7 +30,9 @@ const SUBVIEW = {
 }
 
 const WorldMap = ({ data }) => {
-
+    if (data?.length === 0) {
+        return <Loader />
+    }
     // Register the world map if not preloaded
     useEffect(() => {
         echarts.registerMap("world", world); // Load GeoJSON for the world
@@ -230,15 +233,17 @@ const WorldMap = ({ data }) => {
                 width: MapWidth,
                 overflow: 'hidden'
             }}>
-                {data.length == 0 ? <></> : <ReactEcharts option={options} style={{ height: MapHeight, width: MapWidth }} onEvents={{
-                    click: (params) => {
-                        console.log("Clicked country:", params);
-                        setOn(true)
-                        setSelectedCountry(params.name);
-                        params.data?.personality ? setSelectedPersonality(params.data.personality) : setSelectedPersonality(null);
-                        console.log(params.data?.personality);
-                    },
-                }} />}
+                <div style={{ height: MapHeight, width: MapWidth, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {data.length == 0 ? <Loader /> : <ReactEcharts option={options} style={{ height: MapHeight, width: MapWidth }} onEvents={{
+                        click: (params) => {
+                            console.log("Clicked country:", params);
+                            setOn(true)
+                            setSelectedCountry(params.name);
+                            params.data?.personality ? setSelectedPersonality(params.data.personality) : setSelectedPersonality(null);
+                            console.log(params.data?.personality);
+                        },
+                    }} />}
+                </div>
             </div>
             {isOn && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
                 <div style={{ marginBottom: 18, display: 'flex', width: "100%", alignItems: 'center', justifyContent: 'space-between', marginTop: 10, marginLeft: 10, fontSize: 20 }}>
