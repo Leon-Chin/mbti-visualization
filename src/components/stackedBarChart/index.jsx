@@ -66,7 +66,7 @@ const StackedBarChart = ({ data }) => {
     };
 
     return <div style={{ marginBottom: 20, marginTop: 20, display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-        <ReactECharts option={option} style={{ height: 800, width: 1000 }} />
+        <ReactECharts option={option} style={{ height: 750, width: 1000 }} />
     </div>
 };
 

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import ReactEcharts from "echarts-for-react";
 import * as echarts from 'echarts';
-import world from '../../world.json'
+import world from './world.json'
 import RadarChart from "../radarChart";
 import { Button, Segmented, Select } from "antd";
 import PersonalityImage from "../PersonalitySVG";
@@ -34,8 +34,14 @@ const WorldMap = ({ data }) => {
         return <Loader />
     }
     // Register the world map if not preloaded
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
-        echarts.registerMap("world", world); // Load GeoJSON for the world
+        console.log(world);
+        const loadMap = () => {
+            echarts.registerMap("world", world); // Load GeoJSON for the world
+            setLoading(false);
+        }
+        loadMap();
     }, []);
 
     const [selectedCountry, setSelectedCountry] = useState('France');
@@ -185,10 +191,9 @@ const WorldMap = ({ data }) => {
         },
     }), [data, selectedRegion, mode]);
 
-    return <div className="word-map" style={{ height: (MapHeight + 140), display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 10 }}>
-        <div>Main MBTI Personality Types by Country</div>
+    return <div className="word-map" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 10, paddingTop: 40 }}>
+        <div style={{ fontSize: 36, fontWeight: 700, marginBottom: 10 }}>Main MBTI Personality Types by Country</div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
-
             <Select
                 key={"wordMapOption"}
                 style={{ width: 120 }}
@@ -234,7 +239,7 @@ const WorldMap = ({ data }) => {
                 overflow: 'hidden'
             }}>
                 <div style={{ height: MapHeight, width: MapWidth, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {data.length == 0 ? <Loader /> : <ReactEcharts option={options} style={{ height: MapHeight, width: MapWidth }} onEvents={{
+                    {data.length == 0 || loading ? <Loader /> : <ReactEcharts option={options} style={{ height: MapHeight, width: MapWidth }} onEvents={{
                         click: (params) => {
                             console.log("Clicked country:", params);
                             setOn(true)
@@ -242,7 +247,8 @@ const WorldMap = ({ data }) => {
                             params.data?.personality ? setSelectedPersonality(params.data.personality) : setSelectedPersonality(null);
                             console.log(params.data?.personality);
                         },
-                    }} />}
+                    }} />
+                    }
                 </div>
             </div>
             {isOn && <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>

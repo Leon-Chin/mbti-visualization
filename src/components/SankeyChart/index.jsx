@@ -1,25 +1,37 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 import ReactECharts from "echarts-for-react";
 import { personalityColors } from '../../utils/personalityColors';
-
+import { Select } from 'antd';
+const MAX_COUNT = 5;
 export default function SankeyChart({ data }) {
     const Countries = ["United States", "China", "France", "Russia", "United Kingdom"]
+    const [selectedCountries, setSelectedCountries] = useState([...Countries]);
+    const suffix = (<>
+        <span>
+            {selectedCountries.length} / {MAX_COUNT}
+        </span>
+    </>)
+    const allCountries = data.map(item => ({ value: item.country, label: item.country }))
+    console.log(allCountries);
     const Personalities = Object.keys(personalityColors).map(item => ({
         name: item, itemStyle: {
             color: personalityColors[item], // 自定义每个人格颜色
             areaColor: personalityColors[item]
         },
     }))
-    const CountriesArr = Countries.map(item => ({ name: item, itemStyle: { color: '#767577' }, nodeWidth: 4 }))
-    const LinksData = []
-    data.forEach(item => {
-        Object.keys(item.value).forEach(personality => {
-            if (Countries.includes(item.country)) {
-                const itemD = { source: personality, target: item.country, value: parseFloat((item.value[personality] * 100).toFixed(1)) }
-                LinksData.push(itemD)
-            }
+    const CountriesArr = useMemo(() => selectedCountries.map(item => ({ name: item, itemStyle: { color: '#767577' }, nodeWidth: 4 })), [selectedCountries])
+    const LinksData = useMemo(() => {
+        const res = []
+        data.forEach(item => {
+            Object.keys(item.value).forEach(personality => {
+                if (selectedCountries.includes(item.country)) {
+                    const itemD = { source: personality, target: item.country, value: parseFloat((item.value[personality] * 100).toFixed(1)) }
+                    res.push(itemD)
+                }
+            })
         })
-    })
+        return [...res]
+    }, [data, selectedCountries])
     const option = useMemo(() => ({
         tooltip: {
             trigger: 'item',
@@ -54,9 +66,26 @@ export default function SankeyChart({ data }) {
             },
             links: LinksData
         }
-    }), [data]);
+    }), [data, selectedCountries, CountriesArr, Personalities, LinksData]);
 
     return (
-        <ReactECharts option={option} style={{ height: 730, width: 300 }} />
+        <div>
+            <Select
+                mode="multiple"
+                maxCount={MAX_COUNT}
+                value={selectedCountries}
+                style={{
+                    width: 300,
+                }}
+                onChange={setSelectedCountries}
+                suffixIcon={suffix}
+                placeholder="Please select country"
+                options={allCountries}
+            />
+            {
+                selectedCountries.length === 0 ? <div style={{ textAlign: 'center', height: 700, width: 300, display: 'flex', alignItems: 'center', justifyContent: 'center' }}> Please select Country ~ </div> :
+                    <ReactECharts option={option} style={{ height: 700, width: 300 }} />
+            }
+        </div>
     )
 }

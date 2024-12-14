@@ -45,9 +45,14 @@ function App() {
         {selectedView !== VIEWs.homePage && <>
           {loading ? <Loader /> : <>
             {selectedView === VIEWs.worldMap && <>{data && <WorldMap data={data} />}</>}
-            {selectedView === VIEWs.countryInsight && <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'start' }}>
-              {(data && data.length !== 0) && <SankeyChart data={data} />}
-              {(data && data.length !== 0) && <StackedBarChart data={data} />}
+            {selectedView === VIEWs.countryInsight && <div style={{ display: 'flex', justifyContent: 'center', justifyItems: 'center', alignItems: 'start', flexDirection: 'column', paddingTop: 40 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 36, fontWeight: 700, marginBottom: 10, width: '100%', textAlign: 'center' }}>
+                MBTI Distribution Across Nations
+              </div>
+              <div style={{ display: 'flex', width: '100%', justifyContent: 'space-around', alignItems: 'flex-start', }}>
+                {(data && data.length !== 0) && <SankeyChart data={data} />}
+                {(data && data.length !== 0) && <StackedBarChart data={data} />}
+              </div>
             </div>}
             {selectedView === VIEWs.wordCloud && <WordCloudChart />}
             {selectedView === VIEWs.zodiacInsight && <ZodiacChart />}
