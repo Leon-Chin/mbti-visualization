@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import d3Cloud from 'd3-cloud'; // 使用 D3 的词云布局库
 import personalityData from './processed_d3_data_top200.json';
@@ -49,9 +49,12 @@ const WordCloud = ({ words, personality }) => {
                 .attr('transform', (d) => `translate(${d.x}, ${d.y})`)
                 .text((d) => d.text);
         }
+
     }, [words, personality]);
 
-    return <svg ref={svgRef}></svg>;
+    return <>
+        <svg ref={svgRef}></svg>;
+    </>
 };
 
 

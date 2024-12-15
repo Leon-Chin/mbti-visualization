@@ -63,11 +63,11 @@ function App() {
           backgroundSize: 'contain', // 自动适应大小
           backgroundPosition: 'center bottom', // 居中
           backgroundRepeat: "no-repeat",
-          transform: "translateY(50px)",
-          height: '100%'
+          // transform: "translateY(50px)",
+          height: '100vh'
         }}>
-          <div style={{ height: 800, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', flexDirection: 'column', gap: 60 }}>
-            <div style={{ display: 'flex', fontSize: 46, fontWeight: 700, color: '#4c445a' }}>{("MBTI Visualization").toUpperCase()}</div>
+          <div style={{ height: "100%", display: 'flex', alignItems: 'center', justifyContent: 'flex-start', flexDirection: 'column', gap: 60 }}>
+            <div style={{ display: 'flex', fontSize: 46, fontWeight: 700, color: '#4c445a', marginTop: 40, marginBottom: 40 }}>{("MBTI Visualization").toUpperCase()}</div>
             <ViewsSelection selectView={setSelectedView} />
             <div></div>
           </div>
